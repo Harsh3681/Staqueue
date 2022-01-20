@@ -125,9 +125,9 @@ public class LinkedListDisplay extends JPanel {
     }
     
     public void undoInsert(){
-        linkedList.deleteAtPosition(linkedList, linkedList.size(linkedList)-1);
-        list.remove(list.size()-1);
-        rowBox.remove(1);
+        linkedList.deleteAtPosition(linkedList, linkedList.size(linkedList)-2);
+        list.remove(list.size()-2);
+        rowBox.remove(rowBox.getComponentCount()-1);
             
         textSetter.setText("Undo on Linked List successful.");
             
