@@ -6,14 +6,10 @@ package com.staqueue;
  * and open the template in the editor.
  */
 
-import java.awt.Color;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JScrollPane;
-import javax.swing.JTabbedPane;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
 
 /**
  *
@@ -22,9 +18,12 @@ import javax.swing.JTabbedPane;
 public class Frame extends JFrame {
 
     StackFrame stackFrame;
+    private static final int ROWS = 20;
+    private static final int COLUMNS = 20;
     StackSetup stackSetup;
 
     QueueFrame queueFrame;
+    MainWindow mainWindow;
     LinkedListFrame linkedListFrame;
 
     Frame() {
@@ -75,6 +74,35 @@ public class Frame extends JFrame {
         linkedListFrame = new LinkedListFrame();
         tab.addTab("Linked List", linkedListFrame);
         tab.setMnemonicAt(2, KeyEvent.VK_3);
+
+        BinaryTree tree = new BinaryTree();
+    //    JPanel f = new JPanel();
+    // //    JOptionPane.showMessageDialog(TheWindow.frame, "Hi, user. This program works typing some letters from your keyboard"
+    // //            + "\nSo, the operations you can use are:"
+    // //            + "\n a --- Add an integer number"
+    // //            + "\n f --- Add from file"
+    // //            + "\n s --- Search an integer number"
+    // //            + "\n d --- Delete an integer number"
+    // //            + "\n h --- Help (if you forgot this");
+    //     f.add();
+    //     // create and add an event handler for window closing event
+    //     f.setBounds(50, 50, 700, 700);
+    //     f.setVisible(true);
+        tab.addTab("Binary Tree", new TheWindow(tree));
+        tab.setMnemonicAt(3, KeyEvent.VK_4);
+
+        BFSAlgorithm bfs = new BFSAlgorithm();
+        bfs.setVisible(true);
+        tab.addTab("BFS", bfs);
+        tab.setMnemonicAt(4, KeyEvent.VK_5);
+
+        KruskalsAlgorithm project = new KruskalsAlgorithm();
+        project.setVisible(true);
+        tab.addTab("Kruskal", project);
+
+        // mainWindow = new MainWindow(ROWS, COLUMNS);
+        // tab.addTab("Prims", mainWindow);
+        // tab.setMnemonicAt(5, KeyEvent.VK_6);
 
         add(tab);
 
