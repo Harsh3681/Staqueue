@@ -4,10 +4,8 @@ package com.staqueue;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-import javax.swing.event.*;
 import java.awt.geom.*;
 import java.util.*;
-import java.lang.Object.*;
 
 public class BFSAlgorithm extends JPanel
     implements ActionListener, MouseListener, MouseMotionListener {
@@ -427,6 +425,7 @@ public class BFSAlgorithm extends JPanel
     		vertices.add(new Vertex(point)); // add a new vertex
     		canvas.repaint();
     		break;
+            
     	}
     	case REMOVE_VERTEX: {
     		clickedVertexIndex = onVertex(e.getPoint());
